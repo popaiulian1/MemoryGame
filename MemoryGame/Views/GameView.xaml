@@ -45,23 +45,29 @@
                     
                     <StackPanel Margin="0,0,20,0">
                         <TextBlock Text="Width:" Margin="0,0,0,5"/>
-                        <ComboBox SelectedItem="{Binding BoardWidth}" Width="60">
-                            <ComboBoxItem>2</ComboBoxItem>
-                            <ComboBoxItem>3</ComboBoxItem>
-                            <ComboBoxItem>4</ComboBoxItem>
-                            <ComboBoxItem>5</ComboBoxItem>
-                            <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBox x:Name="BoardWidthComboBox" 
+                                  ItemsSource="{Binding BoardSizeOptions}"
+                                  SelectedItem="{Binding BoardWidth, Mode=TwoWay}"
+                                  Width="100">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                     
                     <StackPanel Margin="0,0,20,0">
                         <TextBlock Text="Height:" Margin="0,0,0,5"/>
-                        <ComboBox SelectedItem="{Binding BoardHeight}" Width="60">
-                            <ComboBoxItem>2</ComboBoxItem>
-                            <ComboBoxItem>3</ComboBoxItem>
-                            <ComboBoxItem>4</ComboBoxItem>
-                            <ComboBoxItem>5</ComboBoxItem>
-                            <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBox x:Name="BoardHeightComboBox" 
+                                  ItemsSource="{Binding BoardSizeOptions}"
+                                  SelectedItem="{Binding BoardHeight, Mode=TwoWay}"
+                                  Width="100">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                     
@@ -144,12 +150,12 @@
                            Foreground="#7f8c8d" 
                            Visibility="{Binding IsGameStarted, Converter={StaticResource InverseBoolToVisibilityConverter}}"/>
                 
-                <ItemsControl ItemsSource="{Binding GameBoard.Cards}" 
+                <ItemsControl ItemsSource="{Binding Board.Cards}" 
                               Visibility="{Binding IsGameStarted, Converter={StaticResource BoolToVisibilityConverter}}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <UniformGrid Rows="{Binding GameBoard.Height}" 
-                                         Columns="{Binding GameBoard.Width}"/>
+                            <UniformGrid Rows="{Binding Board.Height}" 
+                                         Columns="{Binding Board.Width}"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>

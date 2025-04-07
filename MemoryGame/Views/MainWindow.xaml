@@ -23,14 +23,17 @@
             <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10,5">
                 <Button Content="New Game" Margin="5" Padding="10,5"
                         Command="{Binding NavigateToGameCommand}"
+                        Visibility="{Binding IsLoggedIn, Converter={StaticResource BoolToVisibilityConverter}}"
                         Background="#3498db" Foreground="White" BorderThickness="0"/>
                 
                 <Button Content="Statistics" Margin="5" Padding="10,5"
                         Command="{Binding NavigateToStatisticsCommand}"
+                        Visibility="{Binding IsLoggedIn, Converter={StaticResource BoolToVisibilityConverter}}"
                         Background="#3498db" Foreground="White" BorderThickness="0"/>
                 
                 <Button Content="Saved Games" Margin="5" Padding="10,5"
                         Command="{Binding NavigateToSavedGamesCommand}"
+                        Visibility="{Binding IsLoggedIn, Converter={StaticResource BoolToVisibilityConverter}}"
                         Background="#3498db" Foreground="White" BorderThickness="0"/>
             </StackPanel>
             

@@ -111,11 +111,11 @@
                                        Text="Win Rate:" 
                                        FontWeight="SemiBold"/>
                             <TextBlock Grid.Column="1">
-                                <Run Text="{Binding CurrentUser.Statistics.GamesWon, Mode=OneWay}"/>
+                                <Run Text="{Binding Statistics.GamesWon, Mode=OneWay}"/>
                                 <Run Text="/"/>
-                                <Run Text="{Binding CurrentUser.Statistics.GamesPlayed, Mode=OneWay}"/>
+                                <Run Text="{Binding Statistics.GamesPlayed, Mode=OneWay}"/>
                                 <Run Text=" ("/>
-                                <Run Text="{Binding CurrentUser.Statistics.GamesPlayed, Converter={StaticResource WinRateConverter}, Mode=OneWay}"/>
+                                <Run Text="{Binding Statistics, Converter={StaticResource WinRateConverter}, Mode=OneWay}"/>
                                 <Run Text="%)"/>
                             </TextBlock>
                         </Grid>

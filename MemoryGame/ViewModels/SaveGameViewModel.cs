@@ -75,17 +75,21 @@ public class SaveGameViewModel : ObservableObject
 
             if (gameSave != null)
             {
+                // Get the correct category
                 var categoryList = new GameService().GetCategories();
                 var category = categoryList.FirstOrDefault(c => c.Name == gameSave.CategoryName);
 
                 if (category != null)
                 {
+                    // Create a new game board
                     var board = new GameBoard(gameSave.BoardWidth, gameSave.BoardHeight, category);
 
-                    foreach (var cardState in gameSave.CardsStates)
+                    // Restore card states
+                    for (int i = 0; i < board.Cards.Count && i < gameSave.CardsStates.Count; i++)
                     {
+                        var cardState = gameSave.CardsStates[i];
                         var card = board.Cards.FirstOrDefault(c => c.Id == cardState.Id);
-
+                    
                         if (card != null)
                         {
                             card.ImagePath = cardState.ImagePath;
@@ -94,8 +98,11 @@ public class SaveGameViewModel : ObservableObject
                         }
                     }
 
+                    // Raise the event to notify that a game has been loaded
                     GameLoaded?.Invoke(this, board);
-                    StatusMessage = "Game loaded successfully.";
+                    StatusMessage = "Game loaded successfully!";
+                
+                    Console.WriteLine("GameLoaded event invoked");
                 }
                 else
                 {
@@ -109,7 +116,8 @@ public class SaveGameViewModel : ObservableObject
         }
         catch (Exception e)
         {
-            StatusMessage = $"Failed to load saved games: {e.Message}";
+            StatusMessage = $"Failed to load saved game: {e.Message}";
+            Console.WriteLine($"Exception in LoadGame: {e}");
         }
     }
 

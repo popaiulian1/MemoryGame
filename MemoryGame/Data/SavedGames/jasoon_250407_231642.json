@@ -1,0 +1,106 @@
+{
+  "Username": "jasoon",
+  "SavedAt": "2025-04-07T23:16:42.0435725+03:00",
+  "BoardWidth": 4,
+  "BoardHeight": 4,
+  "CategoryName": "Flags",
+  "TimeRemaining": "00:04:50.8816612",
+  "CardsStates": [
+    {
+      "Id": 0,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\germany.png",
+      "IsSelected": true,
+      "IsMatched": true
+    },
+    {
+      "Id": 1,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\china.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 2,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\china.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 3,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\india.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 4,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\brazil.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 5,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\france.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 6,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\india.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 7,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\italy.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 8,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\canada.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 9,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\australia.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 10,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\germany.png",
+      "IsSelected": true,
+      "IsMatched": true
+    },
+    {
+      "Id": 11,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\canada.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 12,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\italy.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 13,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\france.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 14,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\brazil.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 15,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame\\Assets\\Images\\Flags\\australia.png",
+      "IsSelected": false,
+      "IsMatched": false
+    }
+  ]
+}

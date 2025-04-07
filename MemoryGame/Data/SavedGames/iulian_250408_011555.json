@@ -1,0 +1,130 @@
+{
+  "Username": "iulian",
+  "SavedAt": "2025-04-08T01:15:55.1722221+03:00",
+  "BoardWidth": 5,
+  "BoardHeight": 4,
+  "CategoryName": "Fruits",
+  "TimeRemaining": "00:04:38.8005423",
+  "CardsStates": [
+    {
+      "Id": 0,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/banana.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 1,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/orange.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 2,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/apple.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 3,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/grape.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 4,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/pineapple.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 5,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/pear.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 6,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/kiwi.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 7,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/peach.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 8,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/lemon.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 9,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/kiwi.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 10,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/banana.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 11,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/apple.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 12,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/cherry.png",
+      "IsSelected": true,
+      "IsMatched": true
+    },
+    {
+      "Id": 13,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/pear.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 14,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/peach.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 15,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/orange.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 16,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/grape.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 17,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/cherry.png",
+      "IsSelected": true,
+      "IsMatched": true
+    },
+    {
+      "Id": 18,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/lemon.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 19,
+      "ImagePath": "C:\\Users\\Iulian\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Fruits/pineapple.png",
+      "IsSelected": false,
+      "IsMatched": false
+    }
+  ]
+}

@@ -1,16 +1,19 @@
 ﻿using System.IO;
 using System.Text.Json;
+using MemoryGame.Helpers;
 using MemoryGame.Models;
 
 namespace MemoryGame.Services.UserService;
 
 public class UserService : IUserService
 {
-    private const string USER_FILE_PATH = "./Data/users.json";
+    private readonly string USER_FILE_PATH;
     private readonly JsonSerializerOptions _options;
 
     public UserService()
     {
+        USER_FILE_PATH = AppDataHelper.GetUserFilePath();
+        
         _options = new JsonSerializerOptions
         {
             WriteIndented = true,
@@ -22,6 +25,8 @@ public class UserService : IUserService
 
     private void VerifyFileExists()
     {
+        Directory.CreateDirectory(Path.GetDirectoryName(USER_FILE_PATH)!);
+        
         if (!File.Exists(USER_FILE_PATH))
         {
             File.WriteAllText(USER_FILE_PATH, "[]");

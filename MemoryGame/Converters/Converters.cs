@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
+using MemoryGame.Models;
 
 namespace MemoryGame.Converters;
 
@@ -86,16 +87,33 @@ public class BoolToVisibilityConverter : IValueConverter
 
     public class WinRateConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object value, Type targetType, Object parameter, CultureInfo culture)
         {
-            if (value is int gamesPlayed && gamesPlayed > 0)
+            // Check if the value is from a UserStatistics object
+            if (value is UserStatistics stats && stats.GamesPlayed > 0)
             {
-                var gamesWon = (int)parameter;
-                return Math.Round(((double)gamesWon / gamesPlayed) * 100, 2).ToString("0.00");
+                return Math.Round(((double)stats.GamesWon / stats.GamesPlayed) * 100, 2).ToString("0.00");
             }
+        
+            // Regular calculation if gamesPlayed is provided directly
+            else if (value is int gamesPlayed && gamesPlayed > 0)
+            {
+                // Safe parameter handling - default to 0 if parameter is null
+                int gamesWon = 0;
+                if (parameter != null)
+                {
+                    if (parameter is int)
+                        gamesWon = (int)parameter;
+                    else if (int.TryParse(parameter.ToString(), out int parsedValue))
+                        gamesWon = parsedValue;
+                }
+            
+                return Math.Round((double)gamesWon / gamesPlayed * 100, 2).ToString("0.00");
+            }
+        
             return "0.00";
         }
-
+    
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

@@ -1,3 +1,34 @@
-﻿{
-
-}
+[
+  {
+    "Username": "Iulian",
+    "AvatarPath": null,
+    "Statistics": {
+      "GamesPlayed": 0,
+      "GamesWon": 0
+    }
+  },
+  {
+    "Username": "iulian",
+    "AvatarPath": null,
+    "Statistics": {
+      "GamesPlayed": 0,
+      "GamesWon": 0
+    }
+  },
+  {
+    "Username": "jasoon",
+    "AvatarPath": null,
+    "Statistics": {
+      "GamesPlayed": 0,
+      "GamesWon": 0
+    }
+  },
+  {
+    "Username": "CRISTIAAANOOO",
+    "AvatarPath": null,
+    "Statistics": {
+      "GamesPlayed": 0,
+      "GamesWon": 0
+    }
+  }
+]

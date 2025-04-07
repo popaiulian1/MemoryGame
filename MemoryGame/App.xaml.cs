@@ -16,33 +16,8 @@ public partial class App : Application
         base.OnStartup(e);
             
         // Ensure directories exist
-        EnsureDirectoriesExist();
+        AppDataHelper.EnsureDataFoldersExists();
         
         GameImagesHelper.InitializeGameCategories();
-    }
-
-    private void EnsureDirectoriesExist()
-    {
-        try
-        {
-            // Create Data directory if it doesn't exist
-            if (!Directory.Exists("./Data"))
-            {
-                Directory.CreateDirectory("./Data");
-            }
-                
-            // Create SavedGames directory if it doesn't exist
-            if (!Directory.Exists("./Data/SavedGames"))
-            {
-                Directory.CreateDirectory("./Data/SavedGames");
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show($"Error creating application directories: {ex.Message}", 
-                "Error", 
-                MessageBoxButton.OK, 
-                MessageBoxImage.Error);
-        }
     }
 }

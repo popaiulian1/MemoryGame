@@ -36,7 +36,7 @@ public class LoginViewModel : ObservableObject
     }
     
     private bool CanLogin() { return !string.IsNullOrWhiteSpace(Username) && !IsNewUser; }
-    private bool CanRegister() { return !string.IsNullOrWhiteSpace(Username) && !IsNewUser; }
+    private bool CanRegister() { return !string.IsNullOrWhiteSpace(Username) && IsNewUser; }
 
     private void Login()
     {

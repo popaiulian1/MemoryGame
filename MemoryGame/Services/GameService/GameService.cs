@@ -16,14 +16,23 @@ public class GameService : IGameService
 
     public bool ValidateBoardConfig(int width, int height)
     {
-        return (width * height % 2 == 0) && width is >= 2 and <= 6 && height is >= 2 and <= 6;
+        bool isValidCardCount = (width * height) % 2 == 0;
+        
+        bool isValidDimensions = width >= 2 && width <= 6 && height >= 2 && height <= 6;
+        
+        Console.WriteLine($"[DEBUG] ValidateBoardConfig: " +
+                          $"Width={width}, Height={height}, " +
+                          $"EvenCards={isValidCardCount}, " +
+                          $"ValidDimensions={isValidDimensions}");
+        
+        return isValidCardCount && isValidDimensions;
     }
 
     public GameBoard CreateGameBoard(GameCategory category, int width, int height)
     {
         if (!ValidateBoardConfig(width, height))
         {
-            throw new ArgumentException("Invalid board configuration");
+            throw new ArgumentException($"Invalid board configuration: {width}x{height}");
         }
         
         return new GameBoard(width, height, category);

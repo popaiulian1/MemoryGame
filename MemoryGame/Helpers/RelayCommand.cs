@@ -29,6 +29,11 @@ public class RelayCommand : ICommand
     {
         _execute();
     }
+    
+    public void RaiseCanExecuteChanged()
+    {
+        CommandManager.InvalidateRequerySuggested();
+    }
 }
 
 public class RelayCommand<T> : ICommand
@@ -59,5 +64,10 @@ public class RelayCommand<T> : ICommand
     public void Execute(object parameter)
     {
         if (parameter is T) _execute((T)parameter);
+    }
+    
+    public void RaiseCanExecuteChanged()
+    {
+        CommandManager.InvalidateRequerySuggested();
     }
 }

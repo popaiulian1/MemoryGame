@@ -18,20 +18,28 @@ public class GameBoard : ObservableObject
 
     public GameBoard(int width, int height, GameCategory category)
     {
+        if (width * height % 2 != 0)
+        {
+            throw new ArgumentException("Board dimensions must result in an even number of cards");
+        }
+        
+        if (width < 2 || width > 6 || height < 2 || height > 6)
+        {
+            throw new ArgumentException("Board dimensions must be between 2x2 and 6x6");
+        }
+
         Width = width;
         Height = height;
         Category = category;
         _revealedCards = new List<GameCard>();
         InitializeBoard();
+
+        // Debug logging
+        Console.WriteLine($"GameBoard created: {Width}x{Height}, {Cards.Count} cards");
     }
 
     private void InitializeBoard()
     {
-        if (Width * Height % 2 != 0)
-        {
-            throw new ArgumentException("Board dimensions must result in an even number of cards");
-        }
-        
         Cards = new ObservableCollection<GameCard>();
         var cardImages = GetCardImagesForCategory();
         var shuffledImages = ShuffleImages(cardImages);
@@ -41,10 +49,25 @@ public class GameBoard : ObservableObject
             Cards.Add(
                 new GameCard
                 {
-                    Id = i, ImagePath = shuffledImages[i], 
-                    IsSelected = false, IsMatched = false
+                    Id = i, 
+                    ImagePath = shuffledImages[i], 
+                    IsSelected = false, 
+                    IsMatched = false
                 });
         }
+        
+        Console.WriteLine($"InitializeBoard: Created {Cards.Count} cards for {Width}x{Height} board");
+    }
+    
+    public void HideUnmatchedCards()
+    {
+        foreach (var card in Cards.Where(c => c.IsSelected && !c.IsMatched))
+        {
+            card.IsSelected = false;
+        }
+        
+        // Clear the revealed cards list
+        _revealedCards.Clear();
     }
 
     private List<string> GetCardImagesForCategory()
@@ -71,7 +94,12 @@ public class GameBoard : ObservableObject
 
     public bool RevealCard(GameCard card)
     {
-        if (card.IsMatched || card.IsSelected) return false;
+        // Don't allow more than 2 cards to be revealed at once
+        if (_revealedCards.Count >= 2)
+            return false;
+        
+        if (card.IsMatched || card.IsSelected) 
+            return false;
 
         card.IsSelected = true;
         _revealedCards.Add(card);
@@ -97,14 +125,9 @@ public class GameBoard : ObservableObject
         {
             card1.IsMatched = true;
             card2.IsMatched = true;
-        }
-        else
-        {
-            card1.IsMatched = false;
-            card2.IsMatched = false;
+            _revealedCards.Clear(); // Only clear if matched
         }
         
-        _revealedCards.Clear();
         return isMatched;
     }
 
