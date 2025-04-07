@@ -1,0 +1,196 @@
+﻿<UserControl x:Class="MemoryGame.Views.GameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MemoryGame.Views"
+             xmlns:converters="clr-namespace:MemoryGame.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter"/>
+    </UserControl.Resources>
+    
+    <Grid Background="#ecf0f1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Game Setup Panel -->
+        <Border Grid.Row="0" 
+                Background="White" 
+                BorderBrush="#bdc3c7" 
+                BorderThickness="0,0,0,1" 
+                Padding="20,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0" 
+                            Orientation="Horizontal" 
+                            Visibility="{Binding IsGameStarted, Converter={StaticResource InverseBoolToVisibilityConverter}}">
+                    <StackPanel Margin="0,0,20,0">
+                        <TextBlock Text="Category:" Margin="0,0,0,5"/>
+                        <ComboBox ItemsSource="{Binding Categories}" 
+                                  SelectedItem="{Binding SelectedCategory}" 
+                                  DisplayMemberPath="Name" 
+                                  Width="150"/>
+                    </StackPanel>
+                    
+                    <StackPanel Margin="0,0,20,0">
+                        <TextBlock Text="Width:" Margin="0,0,0,5"/>
+                        <ComboBox SelectedItem="{Binding BoardWidth}" Width="60">
+                            <ComboBoxItem>2</ComboBoxItem>
+                            <ComboBoxItem>3</ComboBoxItem>
+                            <ComboBoxItem>4</ComboBoxItem>
+                            <ComboBoxItem>5</ComboBoxItem>
+                            <ComboBoxItem>6</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    
+                    <StackPanel Margin="0,0,20,0">
+                        <TextBlock Text="Height:" Margin="0,0,0,5"/>
+                        <ComboBox SelectedItem="{Binding BoardHeight}" Width="60">
+                            <ComboBoxItem>2</ComboBoxItem>
+                            <ComboBoxItem>3</ComboBoxItem>
+                            <ComboBoxItem>4</ComboBoxItem>
+                            <ComboBoxItem>5</ComboBoxItem>
+                            <ComboBoxItem>6</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    
+                    <Button Content="Start Game" 
+                            Command="{Binding StartGameCommand}" 
+                            VerticalAlignment="Bottom" 
+                            Padding="10,5" 
+                            Background="#2ecc71" 
+                            Foreground="White" 
+                            BorderThickness="0"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="0" 
+                            Orientation="Horizontal" 
+                            Visibility="{Binding IsGameStarted, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <TextBlock Text="Time: " 
+                               VerticalAlignment="Center" 
+                               FontWeight="Bold" 
+                               Margin="0,0,5,0"/>
+                    <TextBlock Text="{Binding ElapsedTime, StringFormat=mm\\:ss}" 
+                               VerticalAlignment="Center" 
+                               Margin="0,0,20,0"/>
+                    
+                    <TextBlock Text="Moves: " 
+                               VerticalAlignment="Center" 
+                               FontWeight="Bold" 
+                               Margin="0,0,5,0"/>
+                    <TextBlock Text="{Binding MoveCount}" 
+                               VerticalAlignment="Center" 
+                               Margin="0,0,20,0"/>
+                    
+                    <TextBlock Text="Matches: " 
+                               VerticalAlignment="Center" 
+                               FontWeight="Bold" 
+                               Margin="0,0,5,0"/>
+                    <TextBlock Text="{Binding MatchCount}" 
+                               VerticalAlignment="Center" 
+                               Margin="0,0,20,0"/>
+                    
+                    <TextBlock Text="Score: " 
+                               VerticalAlignment="Center" 
+                               FontWeight="Bold" 
+                               Margin="0,0,5,0" 
+                               Visibility="{Binding IsGameFinished, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    <TextBlock Text="{Binding GameScore}" 
+                               VerticalAlignment="Center" 
+                               Margin="0,0,20,0" 
+                               Visibility="{Binding IsGameFinished, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1" 
+                            Orientation="Horizontal" 
+                            Visibility="{Binding IsGameStarted, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <Button Content="Save Game" 
+                            Command="{Binding SaveGameCommand}" 
+                            Padding="10,5" 
+                            Margin="0,0,10,0" 
+                            Background="#3498db" 
+                            Foreground="White" 
+                            BorderThickness="0" 
+                            Visibility="{Binding IsGameFinished, Converter={StaticResource InverseBoolToVisibilityConverter}}"/>
+                    
+                    <Button Content="Reset Game" 
+                            Command="{Binding ResetGameCommand}" 
+                            Padding="10,5" 
+                            Background="#e74c3c" 
+                            Foreground="White" 
+                            BorderThickness="0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Game Board -->
+        <Border Grid.Row="1" Margin="20">
+            <Grid>
+                <TextBlock Text="Select a category and board size, then click 'Start Game'" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" 
+                           FontSize="18" 
+                           Foreground="#7f8c8d" 
+                           Visibility="{Binding IsGameStarted, Converter={StaticResource InverseBoolToVisibilityConverter}}"/>
+                
+                <ItemsControl ItemsSource="{Binding GameBoard.Cards}" 
+                              Visibility="{Binding IsGameStarted, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Rows="{Binding GameBoard.Height}" 
+                                         Columns="{Binding GameBoard.Width}"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5" 
+                                    Background="{Binding IsMatched, Converter={StaticResource BoolToCardBackgroundConverter}}" 
+                                    CornerRadius="5" 
+                                    BorderBrush="#bdc3c7" 
+                                    BorderThickness="1">
+                                <Button Command="{Binding DataContext.CardClickCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" 
+                                        CommandParameter="{Binding}" 
+                                        Padding="0" 
+                                        Background="Transparent" 
+                                        BorderThickness="0">
+                                    <Grid>
+                                        <!-- Card Back (Hidden) -->
+                                        <Rectangle Fill="#3498db" 
+                                                   Visibility="{Binding IsSelected, Converter={StaticResource InverseBoolToVisibilityConverter}}"/>
+                                        
+                                        <!-- Card Front (Visible) -->
+                                        <Image Source="{Binding ImagePath}" 
+                                               Stretch="Uniform" 
+                                               Margin="10" 
+                                               Visibility="{Binding IsSelected, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                    </Grid>
+                                </Button>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </Border>
+
+        <!-- Status Bar -->
+        <Border Grid.Row="2" 
+                Background="White" 
+                BorderBrush="#bdc3c7" 
+                BorderThickness="0,1,0,0" 
+                Padding="20,10">
+            <TextBlock Text="{Binding GameStatus}" 
+                       VerticalAlignment="Center"/>
+        </Border>
+    </Grid>
+</UserControl>

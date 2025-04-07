@@ -1,0 +1,39 @@
+﻿<Application x:Class="MemoryGame.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MemoryGame"
+             xmlns:converters="clr-namespace:MemoryGame.Converters"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter"/>
+            <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+            <converters:InverseNullToVisibilityConverter x:Key="InverseNullToVisibilityConverter"/>
+            <converters:BoolToErrorBrushConverter x:Key="BoolToErrorBrushConverter"/>
+            <converters:BoolToRegisterTextConverter x:Key="BoolToRegisterTextConverter"/>
+            <converters:WinRateConverter x:Key="WinRateConverter"/>
+            <converters:IndexConverter x:Key="IndexConverter"/>
+            <converters:BoolToCardBackgroundConverter x:Key="BoolToCardBackgroundConverter"/>
+            
+            <DropShadowEffect x:Key="DropShadowEffect" ShadowDepth="2" BlurRadius="5" Opacity="0.3"/>
+            
+            <Style TargetType="Button">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="3"
+                                    Padding="{TemplateBinding Padding}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
