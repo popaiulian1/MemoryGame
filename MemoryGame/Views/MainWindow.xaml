@@ -35,6 +35,11 @@
                         Command="{Binding NavigateToSavedGamesCommand}"
                         Visibility="{Binding IsLoggedIn, Converter={StaticResource BoolToVisibilityConverter}}"
                         Background="#3498db" Foreground="White" BorderThickness="0"/>
+                
+                <Button Content="About" Margin="5" Padding="10,5"
+                        Command="{Binding OpenAboutCommand}"
+                        Visibility="{Binding IsLoggedIn, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Background="#3498db" Foreground="White" BorderThickness="0"/>
             </StackPanel>
             
             <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10,5">

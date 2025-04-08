@@ -4,6 +4,7 @@ using MemoryGame.Models;
 using MemoryGame.Services.GameService;
 using MemoryGame.Services.StatisticsService;
 using MemoryGame.Services.UserService;
+using MemoryGame.Views;
 
 namespace MemoryGame.ViewModels;
 
@@ -26,6 +27,8 @@ public class MainViewModel : ObservableObject
     public ICommand NavigateToStatisticsCommand { get; }
     public ICommand NavigateToSavedGamesCommand { get; }
     public ICommand LogoutCommand { get; }
+    
+    public ICommand OpenAboutCommand { get; }
 
     public MainViewModel(IUserService userService, IGameService gameService, IStatisticsService statisticsService)
     {
@@ -38,9 +41,16 @@ public class MainViewModel : ObservableObject
         NavigateToStatisticsCommand = new RelayCommand(NavigateToStatistics, () => IsLoggedIn);
         NavigateToSavedGamesCommand = new RelayCommand(NavigateToSavedGames, () => IsLoggedIn);
         LogoutCommand = new RelayCommand(LogOut, () => IsLoggedIn);
+        OpenAboutCommand = new RelayCommand(OpenAbout, () => IsLoggedIn);
 
         // Start with login view
         NavigateToLogin();
+    }
+
+    private void OpenAbout()
+    {
+        AboutView aboutWindow = new AboutView();
+        aboutWindow.ShowDialog();
     }
 
     private void NavigateToLogin()

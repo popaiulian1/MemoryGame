@@ -141,7 +141,7 @@ public class StatisticsService : IStatisticsService
             user.Statistics.GamesPlayed = 0;
             user.Statistics.GamesWon = 0;
 
-            string updatedJson = JsonSerializer.Serialize(user, _options);
+            string updatedJson = JsonSerializer.Serialize(users, _options);
             File.WriteAllText(STATISTICS_FILE_PATH, updatedJson);
 
             return true;

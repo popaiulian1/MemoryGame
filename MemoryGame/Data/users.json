@@ -30,5 +30,21 @@
       "GamesPlayed": 0,
       "GamesWon": 0
     }
+  },
+  {
+    "Username": "flaviu",
+    "AvatarPath": null,
+    "Statistics": {
+      "GamesPlayed": 0,
+      "GamesWon": 0
+    }
+  },
+  {
+    "Username": "andrei",
+    "AvatarPath": null,
+    "Statistics": {
+      "GamesPlayed": 0,
+      "GamesWon": 0
+    }
   }
 ]

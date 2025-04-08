@@ -87,7 +87,7 @@
                                VerticalAlignment="Center" 
                                FontWeight="Bold" 
                                Margin="0,0,5,0"/>
-                    <TextBlock Text="{Binding ElapsedTime, StringFormat=mm\\:ss}" 
+                    <TextBlock Text="{Binding TimeElapsed, StringFormat=mm\\:ss}" 
                                VerticalAlignment="Center" 
                                Margin="0,0,20,0"/>
                     

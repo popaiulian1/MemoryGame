@@ -1,0 +1,106 @@
+{
+  "Username": "iulian",
+  "SavedAt": "2025-04-08T01:24:54.9067801+03:00",
+  "BoardWidth": 4,
+  "BoardHeight": 4,
+  "CategoryName": "Animals",
+  "TimeRemaining": "00:04:51.9828444",
+  "CardsStates": [
+    {
+      "Id": 0,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/dog2.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 1,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/cat.png",
+      "IsSelected": true,
+      "IsMatched": true
+    },
+    {
+      "Id": 2,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/lion.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 3,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/dog.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 4,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/dog2.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 5,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/giraffe.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 6,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/dog.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 7,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/fox.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 8,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/lion.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 9,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/elephant.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 10,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/elephant.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 11,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/fox.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 12,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/giraffe.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 13,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/horse.png",
+      "IsSelected": false,
+      "IsMatched": false
+    },
+    {
+      "Id": 14,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/cat.png",
+      "IsSelected": true,
+      "IsMatched": true
+    },
+    {
+      "Id": 15,
+      "ImagePath": "C:\\Users\\popai\\OneDrive\\Desktop\\MemoryGame\\MemoryGame/Assets/Images/Animals/horse.png",
+      "IsSelected": false,
+      "IsMatched": false
+    }
+  ]
+}
