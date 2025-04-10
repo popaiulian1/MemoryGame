@@ -32,4 +32,4 @@ The application is built using:
 - JSON data storage for user profiles and statistics
 
 ## Author
-Created by Popa Marian-Iulian
+Implemented by **Popa Marian-Iulian**
