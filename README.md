@@ -30,6 +30,3 @@ The application is built using:
 - WPF (Windows Presentation Foundation)
 - MVVM Architecture Pattern
 - JSON data storage for user profiles and statistics
-
-## Author
-Implemented by **Popa Marian-Iulian**
